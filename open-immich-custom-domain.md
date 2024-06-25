@@ -2,6 +2,8 @@
 
 In this guide, you will learn how to open your local installation of Immich to the internet using your own domain, even if you're behind Carrier-Grade NAT (CGNAT), which means your Internet Service Provider (ISP) assigns you a shared public IP address. To work around this issue, we will use Cloudflare (the free plan is sufficient) to create a tunnel from the internet to your machine, enabling you to use `subdomain.yourdomain.tld` to access Immich.
 
+*Note: If you notice mistakes or have suggestions to improve this tutorial, feel free to open an issue or a PR.*
+
 ## Prerequisites
 
 1. A working installation of Immich on your local machine.
@@ -28,7 +30,7 @@ In this guide, you will learn how to open your local installation of Immich to t
 
 Now that Cloudflare DNS is managing your domain, you can easily set the IP address it should translate to. If you have a static IP address for your Immich server, simply set it in Cloudflare, and you're done. If you have a dynamic IP address that rotates but is dedicated to you, it's a bit more complicated but still relatively straightforward. You need to set the IP address initially and keep it updated whenever it changes (there are scripts available online and some routers that can automate this).
 
-The problem many of us with a regular home internet contract face is that our ISP assigns us a shared IP address. This means that the IP address seen by the internet is shared among multiple households, making it impossible to set a unique IP address at the DNS level to identify our home server running Immich.
+The problem many of us with a regular home internet contract face is that our ISP assigns us a shared IP address. This means that the IP address seen by the internet is shared among multiple households, making it impossible to set an IP address at the DNS level that uniquely identifies our home server running Immich.
 
 Enter Cloudflare Tunnels! By installing a piece of software from Cloudflare on your server, a connection to Cloudflare is established. This allows Cloudflare to route all requests to your domain directly to your home server and provides free HTTPS encryption.
 
