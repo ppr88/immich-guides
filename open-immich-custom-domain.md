@@ -2,7 +2,9 @@
 
 In this guide, you will learn how to open your local installation of Immich to the internet using your own domain, even if you're behind Carrier-Grade NAT (CGNAT), which means your Internet Service Provider (ISP) assigns you a shared public IP address. To work around this issue, we will use Cloudflare (the free plan is sufficient) to create a tunnel from the internet to your machine, enabling you to use `subdomain.yourdomain.tld` to access Immich.
 
-*Note: If you notice mistakes or have suggestions to improve this tutorial, feel free to open an issue or a PR.*
+> :warning: *Cloudflare's free plan has a payload size [limit of 100MB](https://developers.cloudflare.com/workers/platform/limits/). Uploading files larger than this limit **will not work** over the internet. You can still do it on your local network.*
+
+> :pray: *If you notice mistakes or have suggestions to improve this tutorial, feel free to open an issue or a PR.*
 
 ## Prerequisites
 
